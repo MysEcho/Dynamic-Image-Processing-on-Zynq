@@ -1,0 +1,1257 @@
+15:54:39 INFO  : Registering command handlers for SDK TCF services
+15:54:40 INFO  : Launching XSCT server: xsct.bat -interactive D:\backup_files\edge_zynq_codes\PS10_266\ov7670_hdmi\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+15:54:50 INFO  : XSCT server has started successfully.
+15:54:50 INFO  : Successfully done setting XSCT server connection channel  
+15:54:54 INFO  : Successfully done setting SDK workspace  
+15:54:54 INFO  : Processing command line option -hwspec D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/design_1_wrapper.hdf.
+16:00:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:00:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+16:00:11 INFO  : FPGA configured successfully with bitstream "D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:01:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:01:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:02:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:02:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+16:02:24 INFO  : FPGA configured successfully with bitstream "D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:02:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+16:02:37 INFO  : 'fpga -state' command is executed.
+16:02:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:02:37 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+16:02:37 INFO  : 'jtag frequency' command is executed.
+16:02:37 INFO  : Sourcing of 'D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:02:37 INFO  : Context for 'APU' is selected.
+16:02:37 INFO  : Hardware design information is loaded from 'D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:02:37 INFO  : 'configparams force-mem-access 1' command is executed.
+16:02:37 INFO  : Context for 'APU' is selected.
+16:02:38 INFO  : 'stop' command is executed.
+16:02:38 INFO  : 'ps7_init' command is executed.
+16:02:38 INFO  : 'ps7_post_config' command is executed.
+16:02:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:02:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:02:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:02:38 INFO  : The application 'D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:02:38 INFO  : 'configparams force-mem-access 0' command is executed.
+16:02:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/backup_files/edge_zynq_codes/PS10_266/ov7670_hdmi/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:02:39 INFO  : Memory regions updated for context APU
+16:02:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:02:39 INFO  : 'con' command is executed.
+16:02:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+16:02:39 INFO  : Launch script is exported to file 'D:\backup_files\edge_zynq_codes\PS10_266\ov7670_hdmi\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+16:07:40 INFO  : Disconnected from the channel tcfchan#1.
+06:46:04 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\shahul\Downloads\OV7670_HDMI\OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+06:46:08 INFO  : XSCT server has started successfully.
+06:46:13 INFO  : Successfully done setting XSCT server connection channel  
+06:46:13 INFO  : Successfully done setting SDK workspace  
+06:46:27 INFO  : Registering command handlers for SDK TCF services
+06:46:27 INFO  : Processing command line option -hwspec D:/project_codes/madesh_backup/EDGE_ZYNQ_7020_CODES/PS_EXAMPLES/OV7670_VGA/OV7670_VGA.sdk/design_1_wrapper.hdf.
+06:47:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:47:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+06:47:35 INFO  : FPGA configured successfully with bitstream "C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+06:47:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+06:47:42 INFO  : 'fpga -state' command is executed.
+06:47:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:47:42 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+06:47:42 INFO  : 'jtag frequency' command is executed.
+06:47:42 INFO  : Sourcing of 'C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+06:47:42 INFO  : Context for 'APU' is selected.
+06:47:42 INFO  : Hardware design information is loaded from 'C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+06:47:42 INFO  : 'configparams force-mem-access 1' command is executed.
+06:47:42 INFO  : Context for 'APU' is selected.
+06:47:42 INFO  : 'stop' command is executed.
+06:47:43 INFO  : 'ps7_init' command is executed.
+06:47:43 INFO  : 'ps7_post_config' command is executed.
+06:47:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:47:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+06:47:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:47:43 INFO  : The application 'C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+06:47:43 INFO  : 'configparams force-mem-access 0' command is executed.
+06:47:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+06:47:43 INFO  : Memory regions updated for context APU
+06:47:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:47:44 INFO  : 'con' command is executed.
+06:47:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+06:47:44 INFO  : Launch script is exported to file 'C:\Users\shahul\Downloads\OV7670_HDMI\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+07:13:36 INFO  : Disconnected from the channel tcfchan#1.
+07:14:09 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\shahul\Downloads\OV7670_HDMI\OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+07:14:13 INFO  : XSCT server has started successfully.
+07:14:23 INFO  : Successfully done setting XSCT server connection channel  
+07:14:23 INFO  : Successfully done setting SDK workspace  
+07:14:27 INFO  : Registering command handlers for SDK TCF services
+07:14:29 INFO  : Processing command line option -hwspec D:/project_codes/madesh_backup/EDGE_ZYNQ_7020_CODES/PS_EXAMPLES/OV7670_VGA/OV7670_VGA.sdk/design_1_wrapper.hdf.
+07:14:29 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_1.
+07:15:23 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\shahul\Downloads\OV7670_HDMI\OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+07:15:26 INFO  : XSCT server has started successfully.
+07:15:32 INFO  : Successfully done setting XSCT server connection channel  
+07:15:32 INFO  : Successfully done setting SDK workspace  
+07:15:34 INFO  : Registering command handlers for SDK TCF services
+07:15:36 INFO  : Processing command line option -hwspec C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper.hdf.
+07:17:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+07:17:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+07:17:06 INFO  : FPGA configured successfully with bitstream "C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_2/design_1_wrapper.bit"
+07:17:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+07:17:20 INFO  : 'fpga -state' command is executed.
+07:17:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+07:17:21 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+07:17:21 INFO  : 'jtag frequency' command is executed.
+07:17:21 INFO  : Sourcing of 'C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+07:17:21 INFO  : Context for 'APU' is selected.
+07:17:21 INFO  : Hardware design information is loaded from 'C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+07:17:21 INFO  : 'configparams force-mem-access 1' command is executed.
+07:17:21 INFO  : Context for 'APU' is selected.
+07:17:21 INFO  : 'stop' command is executed.
+07:17:22 INFO  : 'ps7_init' command is executed.
+07:17:22 INFO  : 'ps7_post_config' command is executed.
+07:17:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:17:22 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+07:17:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:17:22 INFO  : The application 'C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+07:17:22 INFO  : 'configparams force-mem-access 0' command is executed.
+07:17:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+07:17:22 INFO  : Memory regions updated for context APU
+07:17:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:17:23 INFO  : 'con' command is executed.
+07:17:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+07:17:23 INFO  : Launch script is exported to file 'C:\Users\shahul\Downloads\OV7670_HDMI\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+12:28:14 INFO  : Launching XSCT server: xsct.bat -interactive D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+12:28:18 INFO  : XSCT server has started successfully.
+12:28:18 INFO  : Successfully done setting XSCT server connection channel  
+12:28:24 INFO  : Successfully done setting SDK workspace  
+12:28:27 INFO  : Registering command handlers for SDK TCF services
+12:29:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:29:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+12:29:17 INFO  : FPGA configured successfully with bitstream "D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:29:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+12:29:25 INFO  : 'fpga -state' command is executed.
+12:29:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:29:26 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+12:29:26 INFO  : 'jtag frequency' command is executed.
+12:29:26 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:29:26 INFO  : Context for 'APU' is selected.
+12:29:26 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+12:29:26 INFO  : 'configparams force-mem-access 1' command is executed.
+12:29:26 INFO  : Context for 'APU' is selected.
+12:29:26 INFO  : 'stop' command is executed.
+12:29:28 INFO  : 'ps7_init' command is executed.
+12:29:28 INFO  : 'ps7_post_config' command is executed.
+12:29:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:29:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:29:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:29:31 ERROR : Memory write error at 0x100000. APB AP transaction error, DAP status f0000021
+12:29:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+----------------End of Script----------------
+
+12:29:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+12:29:48 INFO  : 'fpga -state' command is executed.
+12:29:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:29:49 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+12:29:49 INFO  : 'jtag frequency' command is executed.
+12:29:49 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:29:49 INFO  : Context for 'APU' is selected.
+12:29:49 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+12:29:49 INFO  : 'configparams force-mem-access 1' command is executed.
+12:29:49 INFO  : Context for 'APU' is selected.
+12:29:49 INFO  : 'stop' command is executed.
+12:29:49 ERROR : AP transaction error, DAP status f0000021
+12:29:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+12:30:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:30:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+12:30:11 ERROR : fpga configuration failed. DONE PIN is not HIGH
+12:30:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:30:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+12:30:25 INFO  : FPGA configured successfully with bitstream "D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:30:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+12:30:29 INFO  : 'fpga -state' command is executed.
+12:30:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:30:29 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+12:30:29 INFO  : 'jtag frequency' command is executed.
+12:30:29 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:30:30 INFO  : Context for 'APU' is selected.
+12:30:30 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+12:30:30 INFO  : 'configparams force-mem-access 1' command is executed.
+12:30:31 INFO  : Context for 'APU' is selected.
+12:30:31 INFO  : 'stop' command is executed.
+12:30:32 INFO  : 'ps7_init' command is executed.
+12:30:32 INFO  : 'ps7_post_config' command is executed.
+12:30:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:30:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:30:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:30:33 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:30:33 INFO  : 'configparams force-mem-access 0' command is executed.
+12:30:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:30:33 INFO  : Memory regions updated for context APU
+12:30:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:30:34 INFO  : 'con' command is executed.
+12:30:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+12:30:34 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+12:34:11 INFO  : Disconnected from the channel tcfchan#1.
+13:00:10 INFO  : Launching XSCT server: xsct.bat -interactive D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+13:00:13 INFO  : XSCT server has started successfully.
+13:00:19 INFO  : Successfully done setting XSCT server connection channel  
+13:00:19 INFO  : Successfully done setting SDK workspace  
+13:00:22 INFO  : Registering command handlers for SDK TCF services
+13:00:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:00:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+13:00:54 INFO  : FPGA configured successfully with bitstream "D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:01:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+13:01:01 INFO  : 'fpga -state' command is executed.
+13:01:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:01:01 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+13:01:01 INFO  : 'jtag frequency' command is executed.
+13:01:01 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:01:01 INFO  : Context for 'APU' is selected.
+13:01:01 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+13:01:01 INFO  : 'configparams force-mem-access 1' command is executed.
+13:01:02 INFO  : Context for 'APU' is selected.
+13:01:02 INFO  : 'stop' command is executed.
+13:01:02 INFO  : 'ps7_init' command is executed.
+13:01:02 INFO  : 'ps7_post_config' command is executed.
+13:01:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:01:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:01:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:01:02 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:01:02 INFO  : 'configparams force-mem-access 0' command is executed.
+13:01:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:01:03 INFO  : Memory regions updated for context APU
+13:01:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:01:03 INFO  : 'con' command is executed.
+13:01:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+13:01:03 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+13:02:00 INFO  : Disconnected from the channel tcfchan#1.
+14:22:36 INFO  : Launching XSCT server: xsct.bat -interactive D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+14:22:40 INFO  : XSCT server has started successfully.
+14:22:52 INFO  : Successfully done setting XSCT server connection channel  
+14:22:52 INFO  : Successfully done setting SDK workspace  
+14:22:58 INFO  : Registering command handlers for SDK TCF services
+14:23:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+14:23:28 INFO  : FPGA configured successfully with bitstream "D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+14:23:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+14:23:34 INFO  : 'fpga -state' command is executed.
+14:23:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:34 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+14:23:34 INFO  : 'jtag frequency' command is executed.
+14:23:34 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:23:34 INFO  : Context for 'APU' is selected.
+14:23:35 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+14:23:35 INFO  : 'configparams force-mem-access 1' command is executed.
+14:23:35 INFO  : Context for 'APU' is selected.
+14:23:35 INFO  : 'stop' command is executed.
+14:23:35 INFO  : 'ps7_init' command is executed.
+14:23:35 INFO  : 'ps7_post_config' command is executed.
+14:23:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:35 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:23:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:35 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:23:35 INFO  : 'configparams force-mem-access 0' command is executed.
+14:23:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:23:36 INFO  : Memory regions updated for context APU
+14:23:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:36 INFO  : 'con' command is executed.
+14:23:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+14:23:36 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+15:12:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:12:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+15:12:07 INFO  : FPGA configured successfully with bitstream "D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:12:13 INFO  : Disconnected from the channel tcfchan#1.
+15:12:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+15:12:14 INFO  : 'fpga -state' command is executed.
+15:12:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:12:15 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+15:12:15 INFO  : 'jtag frequency' command is executed.
+15:12:15 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:12:15 INFO  : Context for 'APU' is selected.
+15:12:15 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:12:15 INFO  : 'configparams force-mem-access 1' command is executed.
+15:12:15 INFO  : Context for 'APU' is selected.
+15:12:15 INFO  : 'stop' command is executed.
+15:12:15 INFO  : 'ps7_init' command is executed.
+15:12:15 INFO  : 'ps7_post_config' command is executed.
+15:12:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:12:15 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:12:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:12:16 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:12:16 INFO  : 'configparams force-mem-access 0' command is executed.
+15:12:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:12:16 INFO  : Memory regions updated for context APU
+15:12:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:12:16 INFO  : 'con' command is executed.
+15:12:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+15:12:16 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+15:12:55 INFO  : Disconnected from the channel tcfchan#2.
+15:12:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+15:12:56 INFO  : 'fpga -state' command is executed.
+15:12:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:12:57 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+15:12:57 INFO  : 'jtag frequency' command is executed.
+15:12:57 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:12:57 INFO  : Context for 'APU' is selected.
+15:12:57 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:12:57 INFO  : 'configparams force-mem-access 1' command is executed.
+15:12:57 INFO  : Context for 'APU' is selected.
+15:12:57 INFO  : 'stop' command is executed.
+15:12:57 INFO  : 'ps7_init' command is executed.
+15:12:57 INFO  : 'ps7_post_config' command is executed.
+15:12:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:12:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:12:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:12:58 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:12:58 INFO  : 'configparams force-mem-access 0' command is executed.
+15:12:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:12:58 INFO  : Memory regions updated for context APU
+15:12:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:12:59 INFO  : 'con' command is executed.
+15:12:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+15:12:59 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+15:13:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:13:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+15:13:12 INFO  : FPGA configured successfully with bitstream "D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:13:17 INFO  : Disconnected from the channel tcfchan#3.
+15:13:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+15:13:19 INFO  : 'fpga -state' command is executed.
+15:13:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:13:19 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+15:13:19 INFO  : 'jtag frequency' command is executed.
+15:13:19 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:13:19 INFO  : Context for 'APU' is selected.
+15:13:19 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:13:19 INFO  : 'configparams force-mem-access 1' command is executed.
+15:13:19 INFO  : Context for 'APU' is selected.
+15:13:19 INFO  : 'stop' command is executed.
+15:13:19 INFO  : 'ps7_init' command is executed.
+15:13:20 INFO  : 'ps7_post_config' command is executed.
+15:13:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:13:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:13:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:13:20 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:13:20 INFO  : 'configparams force-mem-access 0' command is executed.
+15:13:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:13:20 INFO  : Memory regions updated for context APU
+15:13:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:13:20 INFO  : 'con' command is executed.
+15:13:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+15:13:20 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+15:13:39 INFO  : Disconnected from the channel tcfchan#4.
+17:10:07 INFO  : Launching XSCT server: xsct.bat -interactive D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+17:10:10 INFO  : XSCT server has started successfully.
+17:10:10 INFO  : Successfully done setting XSCT server connection channel  
+17:10:17 INFO  : Successfully done setting SDK workspace  
+17:10:29 INFO  : Registering command handlers for SDK TCF services
+17:10:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:10:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+17:10:46 INFO  : FPGA configured successfully with bitstream "D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:10:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+17:10:53 INFO  : 'fpga -state' command is executed.
+17:10:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:10:54 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+17:10:54 INFO  : 'jtag frequency' command is executed.
+17:10:54 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:10:54 INFO  : Context for 'APU' is selected.
+17:10:54 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:10:54 INFO  : 'configparams force-mem-access 1' command is executed.
+17:10:54 INFO  : Context for 'APU' is selected.
+17:10:54 INFO  : 'stop' command is executed.
+17:10:54 INFO  : 'ps7_init' command is executed.
+17:10:54 INFO  : 'ps7_post_config' command is executed.
+17:10:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:10:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:10:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:10:55 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:10:55 INFO  : 'configparams force-mem-access 0' command is executed.
+17:10:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:11:01 INFO  : Memory regions updated for context APU
+17:11:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:11:02 INFO  : 'con' command is executed.
+17:11:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+17:11:02 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+17:11:22 INFO  : Disconnected from the channel tcfchan#1.
+17:11:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Edge 210319A288EEA" && level==0} -index 1' command is executed.
+17:11:23 INFO  : 'fpga -state' command is executed.
+17:11:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:11:23 INFO  : Jtag cable 'Digilent Edge 210319A288EEA' is selected.
+17:11:23 INFO  : 'jtag frequency' command is executed.
+17:11:23 INFO  : Sourcing of 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:11:23 INFO  : Context for 'APU' is selected.
+17:11:23 INFO  : Hardware design information is loaded from 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:11:23 INFO  : 'configparams force-mem-access 1' command is executed.
+17:11:23 INFO  : Context for 'APU' is selected.
+17:11:23 INFO  : 'stop' command is executed.
+17:11:24 INFO  : 'ps7_init' command is executed.
+17:11:24 INFO  : 'ps7_post_config' command is executed.
+17:11:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:11:24 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:11:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:11:24 INFO  : The application 'D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:11:24 INFO  : 'configparams force-mem-access 0' command is executed.
+17:11:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+loadhw -hw D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+dow D:/project_codes/madesh_backup/EDGE_ZYNQ_7010_CODES/PS_EXAMPLES/Camera/OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:11:31 INFO  : Memory regions updated for context APU
+17:11:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:11:31 INFO  : 'con' command is executed.
+17:11:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Edge 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+17:11:31 INFO  : Launch script is exported to file 'D:\project_codes\madesh_backup\EDGE_ZYNQ_7010_CODES\PS_EXAMPLES\Camera\OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+17:16:39 INFO  : Disconnected from the channel tcfchan#2.
+17:46:46 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\antar\Desktop\Test1\CH12_OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+17:46:49 INFO  : XSCT server has started successfully.
+17:46:53 INFO  : Successfully done setting XSCT server connection channel  
+17:46:53 INFO  : Successfully done setting SDK workspace  
+17:46:54 INFO  : Registering command handlers for SDK TCF services
+17:46:55 INFO  : Processing command line option -hwspec C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper.hdf.
+17:47:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:47:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+17:47:11 INFO  : FPGA configured successfully with bitstream "C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:47:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+17:47:30 INFO  : 'fpga -state' command is executed.
+17:47:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:47:31 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+17:47:31 INFO  : 'jtag frequency' command is executed.
+17:47:31 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:47:31 INFO  : Context for 'APU' is selected.
+17:47:31 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:47:31 INFO  : 'configparams force-mem-access 1' command is executed.
+17:47:31 INFO  : Context for 'APU' is selected.
+17:47:31 INFO  : 'stop' command is executed.
+17:47:32 INFO  : 'ps7_init' command is executed.
+17:47:32 INFO  : 'ps7_post_config' command is executed.
+17:47:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:47:32 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:47:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:47:32 INFO  : The application 'C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:47:32 INFO  : 'configparams force-mem-access 0' command is executed.
+17:47:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test1/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:47:32 INFO  : Memory regions updated for context APU
+17:47:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:47:32 INFO  : 'con' command is executed.
+17:47:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+17:47:32 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test1\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+19:54:42 INFO  : Disconnected from the channel tcfchan#1.
+01:54:39 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+01:54:42 INFO  : XSCT server has started successfully.
+01:54:47 INFO  : Successfully done setting XSCT server connection channel  
+01:54:47 INFO  : Successfully done setting SDK workspace  
+01:54:49 INFO  : Registering command handlers for SDK TCF services
+01:54:50 INFO  : Processing command line option -hwspec C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper.hdf.
+18:20:58 INFO  : Registering command handlers for SDK TCF services
+18:20:59 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\temp_xsdb_launch_script.tcl
+18:21:05 INFO  : XSCT server has started successfully.
+18:21:11 INFO  : Successfully done setting XSCT server connection channel  
+18:21:11 INFO  : Successfully done setting SDK workspace  
+18:21:11 INFO  : Processing command line option -hwspec C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper.hdf.
+18:21:11 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_4.
+18:22:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:22:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:22:15 INFO  : FPGA configured successfully with bitstream "C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:23:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:23:05 INFO  : 'fpga -state' command is executed.
+18:23:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:23:06 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:23:06 INFO  : 'jtag frequency' command is executed.
+18:23:06 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:23:06 INFO  : Context for 'APU' is selected.
+18:23:06 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:23:06 INFO  : 'configparams force-mem-access 1' command is executed.
+18:23:06 INFO  : Context for 'APU' is selected.
+18:23:06 INFO  : 'stop' command is executed.
+18:23:06 INFO  : 'ps7_init' command is executed.
+18:23:06 INFO  : 'ps7_post_config' command is executed.
+18:23:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:23:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:23:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:23:07 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:23:07 INFO  : 'configparams force-mem-access 0' command is executed.
+18:23:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:23:07 INFO  : Memory regions updated for context APU
+18:23:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:23:07 INFO  : 'con' command is executed.
+18:23:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:23:07 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:23:28 INFO  : Disconnected from the channel tcfchan#1.
+18:23:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:23:29 INFO  : 'fpga -state' command is executed.
+18:23:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:23:29 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:23:29 INFO  : 'jtag frequency' command is executed.
+18:23:29 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:23:29 INFO  : Context for 'APU' is selected.
+18:23:31 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:23:31 INFO  : 'configparams force-mem-access 1' command is executed.
+18:23:32 INFO  : Context for 'APU' is selected.
+18:23:32 INFO  : 'stop' command is executed.
+18:23:32 INFO  : 'ps7_init' command is executed.
+18:23:32 INFO  : 'ps7_post_config' command is executed.
+18:23:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:23:32 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:23:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:23:32 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:23:32 INFO  : 'configparams force-mem-access 0' command is executed.
+18:23:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:23:32 INFO  : Memory regions updated for context APU
+18:23:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:23:33 INFO  : 'con' command is executed.
+18:23:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:23:33 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:23:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:23:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:23:56 INFO  : FPGA configured successfully with bitstream "C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:24:07 INFO  : Disconnected from the channel tcfchan#2.
+18:24:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:24:08 INFO  : 'fpga -state' command is executed.
+18:24:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:24:08 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:24:08 INFO  : 'jtag frequency' command is executed.
+18:24:08 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:24:09 INFO  : Context for 'APU' is selected.
+18:24:09 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:24:09 INFO  : 'configparams force-mem-access 1' command is executed.
+18:24:09 INFO  : Context for 'APU' is selected.
+18:24:09 INFO  : 'stop' command is executed.
+18:24:09 INFO  : 'ps7_init' command is executed.
+18:24:09 INFO  : 'ps7_post_config' command is executed.
+18:24:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:24:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:24:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:24:10 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:24:10 INFO  : 'configparams force-mem-access 0' command is executed.
+18:24:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:24:10 INFO  : Memory regions updated for context APU
+18:24:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:24:10 INFO  : 'con' command is executed.
+18:24:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:24:10 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:24:34 INFO  : Disconnected from the channel tcfchan#3.
+18:24:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:24:35 INFO  : 'fpga -state' command is executed.
+18:24:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:24:36 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:24:36 INFO  : 'jtag frequency' command is executed.
+18:24:36 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:24:36 INFO  : Context for 'APU' is selected.
+18:24:36 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:24:36 INFO  : 'configparams force-mem-access 1' command is executed.
+18:24:36 INFO  : Context for 'APU' is selected.
+18:24:36 INFO  : 'stop' command is executed.
+18:24:37 INFO  : 'ps7_init' command is executed.
+18:24:37 INFO  : 'ps7_post_config' command is executed.
+18:24:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:24:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:24:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:24:37 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:24:37 INFO  : 'configparams force-mem-access 0' command is executed.
+18:24:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:24:37 INFO  : Memory regions updated for context APU
+18:24:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:24:38 INFO  : 'con' command is executed.
+18:24:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:24:38 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:25:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:25:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:25:52 INFO  : FPGA configured successfully with bitstream "C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:26:08 INFO  : Disconnected from the channel tcfchan#4.
+18:26:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:26:09 INFO  : 'fpga -state' command is executed.
+18:26:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:26:09 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:26:09 INFO  : 'jtag frequency' command is executed.
+18:26:09 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:26:09 INFO  : Context for 'APU' is selected.
+18:26:10 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:26:10 INFO  : 'configparams force-mem-access 1' command is executed.
+18:26:10 INFO  : Context for 'APU' is selected.
+18:26:10 INFO  : 'stop' command is executed.
+18:26:10 INFO  : 'ps7_init' command is executed.
+18:26:10 INFO  : 'ps7_post_config' command is executed.
+18:26:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:26:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:26:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:26:10 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:26:10 INFO  : 'configparams force-mem-access 0' command is executed.
+18:26:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:26:11 INFO  : Memory regions updated for context APU
+18:26:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:26:11 INFO  : 'con' command is executed.
+18:26:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:26:11 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:27:25 INFO  : Disconnected from the channel tcfchan#5.
+18:27:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:27:26 INFO  : 'fpga -state' command is executed.
+18:27:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:27:27 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:27:27 INFO  : 'jtag frequency' command is executed.
+18:27:27 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:27:27 INFO  : Context for 'APU' is selected.
+18:27:27 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:27:27 INFO  : 'configparams force-mem-access 1' command is executed.
+18:27:27 INFO  : Context for 'APU' is selected.
+18:27:27 INFO  : 'stop' command is executed.
+18:27:28 INFO  : 'ps7_init' command is executed.
+18:27:28 INFO  : 'ps7_post_config' command is executed.
+18:27:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:27:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:27:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:27:28 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:27:29 INFO  : 'configparams force-mem-access 0' command is executed.
+18:27:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:27:29 INFO  : Memory regions updated for context APU
+18:27:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:27:29 INFO  : 'con' command is executed.
+18:27:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:27:29 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:28:01 INFO  : Disconnected from the channel tcfchan#6.
+18:28:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:28:02 INFO  : 'fpga -state' command is executed.
+18:28:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:28:02 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:28:02 INFO  : 'jtag frequency' command is executed.
+18:28:02 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:28:02 INFO  : Context for 'APU' is selected.
+18:28:02 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:28:02 INFO  : 'configparams force-mem-access 1' command is executed.
+18:28:02 INFO  : Context for 'APU' is selected.
+18:28:02 INFO  : 'stop' command is executed.
+18:28:03 INFO  : 'ps7_init' command is executed.
+18:28:03 INFO  : 'ps7_post_config' command is executed.
+18:28:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:28:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:28:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:28:03 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:28:03 INFO  : 'configparams force-mem-access 0' command is executed.
+18:28:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:28:04 INFO  : Memory regions updated for context APU
+18:28:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:28:04 INFO  : 'con' command is executed.
+18:28:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:28:04 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:28:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:28:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:28:55 INFO  : FPGA configured successfully with bitstream "C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:29:02 INFO  : Disconnected from the channel tcfchan#7.
+18:29:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:29:04 INFO  : 'fpga -state' command is executed.
+18:29:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:29:04 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:29:04 INFO  : 'jtag frequency' command is executed.
+18:29:04 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:29:04 INFO  : Context for 'APU' is selected.
+18:29:04 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:29:04 INFO  : 'configparams force-mem-access 1' command is executed.
+18:29:04 INFO  : Context for 'APU' is selected.
+18:29:04 INFO  : 'stop' command is executed.
+18:29:05 INFO  : 'ps7_init' command is executed.
+18:29:05 INFO  : 'ps7_post_config' command is executed.
+18:29:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:29:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:05 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:29:05 INFO  : 'configparams force-mem-access 0' command is executed.
+18:29:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:29:05 INFO  : Memory regions updated for context APU
+18:29:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:06 INFO  : 'con' command is executed.
+18:29:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:29:06 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:29:36 INFO  : Disconnected from the channel tcfchan#8.
+18:29:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:29:37 INFO  : 'fpga -state' command is executed.
+18:29:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:29:37 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:29:37 INFO  : 'jtag frequency' command is executed.
+18:29:37 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:29:38 INFO  : Context for 'APU' is selected.
+18:29:38 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:29:38 INFO  : 'configparams force-mem-access 1' command is executed.
+18:29:38 INFO  : Context for 'APU' is selected.
+18:29:38 INFO  : 'stop' command is executed.
+18:29:39 INFO  : 'ps7_init' command is executed.
+18:29:39 INFO  : 'ps7_post_config' command is executed.
+18:29:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:29:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:39 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:29:39 INFO  : 'configparams force-mem-access 0' command is executed.
+18:29:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:29:39 INFO  : Memory regions updated for context APU
+18:29:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:40 INFO  : 'con' command is executed.
+18:29:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:29:40 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:31:39 INFO  : Disconnected from the channel tcfchan#9.
+18:31:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:31:40 INFO  : 'fpga -state' command is executed.
+18:31:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:31:41 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:31:41 INFO  : 'jtag frequency' command is executed.
+18:31:41 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:31:41 INFO  : Context for 'APU' is selected.
+18:31:41 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:31:41 INFO  : 'configparams force-mem-access 1' command is executed.
+18:31:41 INFO  : Context for 'APU' is selected.
+18:31:41 INFO  : 'stop' command is executed.
+18:31:42 INFO  : 'ps7_init' command is executed.
+18:31:42 INFO  : 'ps7_post_config' command is executed.
+18:31:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:42 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:31:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:43 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:31:43 INFO  : 'configparams force-mem-access 0' command is executed.
+18:31:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:31:43 INFO  : Memory regions updated for context APU
+18:31:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:43 INFO  : 'con' command is executed.
+18:31:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:31:43 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:31:57 INFO  : Disconnected from the channel tcfchan#10.
+18:31:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:31:59 INFO  : 'fpga -state' command is executed.
+18:31:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:31:59 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:31:59 INFO  : 'jtag frequency' command is executed.
+18:31:59 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:31:59 INFO  : Context for 'APU' is selected.
+18:31:59 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:31:59 INFO  : 'configparams force-mem-access 1' command is executed.
+18:31:59 INFO  : Context for 'APU' is selected.
+18:31:59 INFO  : 'stop' command is executed.
+18:32:00 INFO  : 'ps7_init' command is executed.
+18:32:00 INFO  : 'ps7_post_config' command is executed.
+18:32:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:32:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:01 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:32:01 INFO  : 'configparams force-mem-access 0' command is executed.
+18:32:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:32:01 INFO  : Memory regions updated for context APU
+18:32:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:01 INFO  : 'con' command is executed.
+18:32:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:32:01 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:33:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:33:31 INFO  : FPGA configured successfully with bitstream "C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:33:42 INFO  : Disconnected from the channel tcfchan#11.
+18:33:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319A288EEA" && level==0} -index 1' command is executed.
+18:33:43 INFO  : 'fpga -state' command is executed.
+18:33:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:44 INFO  : Jtag cable 'Digilent Arty 210319A288EEA' is selected.
+18:33:44 INFO  : 'jtag frequency' command is executed.
+18:33:44 INFO  : Sourcing of 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:33:44 INFO  : Context for 'APU' is selected.
+18:33:44 INFO  : Hardware design information is loaded from 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:33:44 INFO  : 'configparams force-mem-access 1' command is executed.
+18:33:44 INFO  : Context for 'APU' is selected.
+18:33:44 INFO  : 'stop' command is executed.
+18:33:45 INFO  : 'ps7_init' command is executed.
+18:33:45 INFO  : 'ps7_post_config' command is executed.
+18:33:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:33:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:45 INFO  : The application 'C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:33:45 INFO  : 'configparams force-mem-access 0' command is executed.
+18:33:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+loadhw -hw C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+dow C:/Users/antar/Desktop/Test2/CH12_OV7670_HDMI/ov7670_hdmi.sdk/ov7670_hdmi/Debug/ov7670_hdmi.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:33:45 INFO  : Memory regions updated for context APU
+18:33:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:45 INFO  : 'con' command is executed.
+18:33:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty 210319A288EEA"} -index 0
+con
+----------------End of Script----------------
+
+18:33:45 INFO  : Launch script is exported to file 'C:\Users\antar\Desktop\Test2\CH12_OV7670_HDMI\ov7670_hdmi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ov7670_hdmi.elf_on_local.tcl'
+18:36:00 INFO  : Disconnected from the channel tcfchan#12.

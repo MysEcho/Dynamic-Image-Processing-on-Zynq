@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# 
+# Start of session at: Mon Mar 29 07:13:39 2021
+# Process ID: 3524
+# Current directory: C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/webtalk/webtalk.log
+# Journal file: C:/Users/shahul/Downloads/OV7670_HDMI/OV7670_HDMI/ov7670_hdmi.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl
