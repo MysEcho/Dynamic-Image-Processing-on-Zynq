@@ -1,7 +1,7 @@
 Real-Time Image Processing involves the transformation of incoming signals, primarily from a camera, into a
 format that can be readily interpreted by a display device.
 This process is heavily reliant on precise timing constraints,
-demanding efficient hardware execution. This paper proposes
+demanding efficient hardware execution. This project proposes
 an innovative method for interfacing the OV7670 Complementary Metal Oxide Semiconductor (CMOS) Camera with an
 FPGA-based Real-Time Image Processing system on a Zynq
 7010 platform, using the open-source Digilent Dynamic Clock
