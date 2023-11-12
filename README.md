@@ -16,3 +16,13 @@ Visual Interface) block has been coded in VHDL to convert
 the output from AXI4-Stream to Video Out Xilinx IP Core to
 TMDS (Transition-Minimized Differential Signalling) data, to be
 interpreted by an HDMI compatible monitor.
+
+
+**Architecture:**
+
+![test](https://github.com/MysEcho/Dynamic-Image-Processing-on-Zynq/assets/135346641/6ae09a4c-b1f3-4c89-bc53-359cb6ef6e17)
+
+
+**Real-time Video Processing as seen on an HDMI compatible monitor:**
+
+![Combined](https://github.com/MysEcho/Dynamic-Image-Processing-on-Zynq/assets/135346641/9da7588a-11f6-40a0-89a9-fbd1362d79c3)
